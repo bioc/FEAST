@@ -17,7 +17,7 @@
 #' data(Yan)
 #' k = length(unique(trueclass))
 #' Y = Y[1:1000, ]
-#' res = SC3_Clust(Y, k=k)
+#' #res = SC3_Clust(Y, k=k)
 #' @importFrom matrixStats colVars
 #' @import SingleCellExperiment
 #' @import SummarizedExperiment
