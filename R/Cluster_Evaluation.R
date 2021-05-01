@@ -120,8 +120,7 @@ cal_metrics = function(cl1, cl2, randMethod = c("Rand", "FM", "Jaccard"))
                     as.integer(m2),
                     as.integer(n),
                     as.integer(flag),
-                    r = as.double(0),
-                    PACKAGE = "FEAST")
+                    r = as.double(0))
         randVec[i] <- c.res$r
     }
     return(randVec)
