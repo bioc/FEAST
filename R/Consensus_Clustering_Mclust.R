@@ -1,6 +1,7 @@
 #' function for convert a vector to a binary matrix
 #' @param vec a vector.
 #' @return a n by n binary matrix indicating the adjacency.
+#' @importFrom utils combn
 vector2matrix = function(vec){
     mat = matrix(0, nrow = length(vec), ncol = length(vec))
     diag(mat) = diag(mat) + 1
@@ -31,6 +32,9 @@ vector2matrix = function(vec){
 #' cixs = sample(ncol(Y), 40)
 #' Y = Y[rixs, cixs]
 #' con = Consensus(Y, k=5)
+#' @importFrom stats median
+#' @importFrom matrixStats rowVars
+#' @importFrom matrixStats rowSds
 #' @export
 Consensus = function(Y, num_pcs = 10, top_pctg = 0.33, k =2, thred = 0.9){
     if (all(Y %%1 == 0)){
