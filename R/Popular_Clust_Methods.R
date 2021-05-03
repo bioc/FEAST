@@ -13,16 +13,10 @@
 #' @param k The number of clusters. If it is not provided, k is estimated by the default method in SC3.
 #' @param input_markers A character vector including the featured genes. If they are not presented, SC3 will take care of this.
 #' @return the clustering labels and the featured genes.
-#' @examples
-#' data(Yan)
-#' k = length(unique(trueclass))
-#' Y = Y[1:1000, ]
-#' res = SC3_Clust(Y, k=k)
 #' @importFrom matrixStats colVars
 #' @import SingleCellExperiment
 #' @import SummarizedExperiment
 #' @import SC3
-#' @export
 SC3_Clust = function(Y, k = NULL, input_markers = NULL){
     # Y is the count matrix
     sce = SingleCellExperiment(

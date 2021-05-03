@@ -19,9 +19,3 @@ the clustering labels and the featured genes.
 \description{
 SC3 Clustering
 }
-\examples{
-data(Yan)
-k = length(unique(trueclass))
-Y = Y[1:1000, ]
-res = SC3_Clust(Y, k=k)
-}
