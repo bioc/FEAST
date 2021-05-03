@@ -14,10 +14,14 @@
 #' @param input_markers A character vector including the featured genes. If they are not presented, SC3 will take care of this.
 #' @return the clustering labels and the featured genes.
 #' @examples
-#'  data(Yan)
-#'  k = length(unique(trueclass))
-#'  Y = Y[1:3000, ]
-#'  res = SC3_Clust(Y, k=k)
+#' data(Yan)
+#' k = length(unique(trueclass))
+#' Y = Y[1:1000, ]
+#' res = SC3_Clust(Y, k=k)
+#' @importFrom matrixStats colVars
+#' @import SingleCellExperiment
+#' @import SummarizedExperiment
+#' @import SC3
 #' @export
 SC3_Clust = function(Y, k = NULL, input_markers = NULL){
     # Y is the count matrix
@@ -79,6 +83,8 @@ SC3_Clust = function(Y, k = NULL, input_markers = NULL){
 #'  data(Yan)
 #'  k = length(unique(trueclass))
 #'  # TSCAN_res = TSCAN_Clust(Y, k=k)
+#' @import TSCAN
+#' @importFrom stats lm
 #' @export
 TSCAN_Clust = function(Y, k, minexpr_percent = 0.5, cvcutoff = 1, input_markers = NULL) {
     # Here k is a vector for BIC calculation in Mclust function.

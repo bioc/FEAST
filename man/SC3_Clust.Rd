@@ -15,10 +15,13 @@ SC3_Clust(Y, k = NULL, input_markers = NULL)
 }
 \value{
 the clustering labels and the featured genes.
- data(Yan)
- k = length(unique(trueclass))
- # res = SC3_Clust(Y, k=k)
 }
 \description{
 SC3 Clustering
+}
+\examples{
+data(Yan)
+k = length(unique(trueclass))
+Y = Y[1:1000, ]
+res = SC3_Clust(Y, k=k)
 }

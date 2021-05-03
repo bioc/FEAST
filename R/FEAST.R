@@ -21,6 +21,12 @@
 #' cixs = sample(ncol(Y), 40)
 #' Y = Y[rixs, cixs]
 #' ixs = FEAST(Y, k=k)
+#' @importFrom utils setTxtProgressBar txtProgressBar
+#' @importFrom stats kmeans pf prcomp
+#' @importFrom matrixStats rowSds
+#' @import BiocParallel
+#' @import mclust
+#' @import irlba
 #' @export
 FEAST = function (Y, k = 2, num_pcs = 10, dim_reduce = c("pca", "svd", "irlba"), split = FALSE, batch_size =1000, BPPARAM=bpparam()){
     if (all(Y%%1 == 0)) {
@@ -165,6 +171,12 @@ FEAST = function (Y, k = 2, num_pcs = 10, dim_reduce = c("pca", "svd", "irlba"),
 #' data(Yan)
 #' k = length(unique(trueclass))
 #' res = FEAST_fast(Y, k=k)
+#' @importFrom utils setTxtProgressBar txtProgressBar
+#' @importFrom stats kmeans pf prcomp
+#' @importFrom stats median
+#' @import BiocParallel
+#' @import mclust
+#' @import irlba
 #' @export
 FEAST_fast = function (Y, k = 2, num_pcs = 10, split = FALSE, batch_size =1000, BPPARAM=bpparam()){
     if (all(Y%%1 == 0)) {
