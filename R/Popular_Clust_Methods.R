@@ -17,6 +17,7 @@
 #' @import SingleCellExperiment
 #' @import SummarizedExperiment
 #' @import SC3
+#' @export
 SC3_Clust = function(Y, k = NULL, input_markers = NULL){
     # Y is the count matrix
     sce = SingleCellExperiment(
