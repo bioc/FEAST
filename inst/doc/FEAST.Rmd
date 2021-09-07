@@ -71,7 +71,7 @@ library(FEAST)
 data(Yan)
 k = length(unique(trueclass))
 Y = process_Y(Y, thre = 2)
-# 
+# The core function. 
 ixs = FEAST(Y, k=k)
 # look at the features
 Ynorm = Norm_Y(Y)
@@ -84,7 +84,7 @@ for (i in 1:9){
 ```
 
 # Using FEAST for scRNA-seq clustering analysis
-FEAST requires a count expression matrix with rows representing the genes and columns representing the cells. To preprocess the count matrix, FEAST filters out the genes depending on the dropout rates (sometimes known as zero-expression rates). Alternatively, the users can input the normalized matrix (usually log normalized by the sequencing depth). Here, we use one template `Yan` [@yan2013single] dataset. It is important to note that FEAST requires the number of clusters (**k**) as an input, which can be obtained by the prior knowledge of the cell types. 
+FEAST requires a count expression matrix with rows representing the genes and columns representing the cells. To preprocess the count matrix, FEAST filters out the genes depending on the dropout rates (sometimes known as zero-expression rates). Alternatively, the users can input the normalized matrix (usually log transformed of relative abundance expression matrix (scaled by average sequencing depth)). Here, we use one template `Yan` [@yan2013single] dataset. It is important to note that FEAST requires the number of clusters (**k**) as an input, which can be obtained by the prior knowledge of the cell types. 
 
 ## Load the data
 The `Yan` dataset is loaded with two objects including the count expression matrix (Y) and corresponding cell type information (trueclass). Other sample datasets can be downloaded at https://drive.google.com/drive/u/0/folders/1SRT7mrX7ziJoSjuFLLkK8kjnUsJrabVM. If the users want to use one Deng dataset[@deng2014single], the users can load the data and access the phenotype information by using `colData(Deng)` function, and the count expression matrix by using `assay(Deng,"counts")` function from the SummarizedExperiment Bioconductor package. 

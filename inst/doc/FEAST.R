@@ -14,7 +14,7 @@ library(FEAST)
 data(Yan)
 k = length(unique(trueclass))
 Y = process_Y(Y, thre = 2)
-# 
+# The core function. 
 ixs = FEAST(Y, k=k)
 # look at the features
 Ynorm = Norm_Y(Y)
