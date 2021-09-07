@@ -16,16 +16,17 @@ Description: Cell clustering is one of the most important and commonly performed
 License: GPL-2
 Encoding: UTF-8
 LazyData: true
-Depends:R (>= 4.1), mclust, BiocParallel, SummarizedExperiment
+Depends: R (>= 4.1), mclust, BiocParallel, SummarizedExperiment
 biocViews: Sequencing, SingleCell, Clustering, FeatureExtraction
 BugReports: https://github.com/suke18/FEAST/issues
-Imports: SingleCellExperiment, methods, stats, utils, irlba, TSCAN, SC3, matrixStats
-Suggests: 
-    rmarkdown,
-    Seurat,
-    ggpubr,
-    knitr,
-    testthat (>= 3.0.0),
-    BiocStyle
+Imports: SingleCellExperiment, methods, stats, utils, irlba, TSCAN,
+        SC3, matrixStats
+Suggests: rmarkdown, Seurat, ggpubr, knitr, testthat (>= 3.0.0),
+        BiocStyle
 VignetteBuilder: knitr
 RoxygenNote: 7.1.1
+NeedsCompilation: yes
+Packaged: 2021-09-07 07:02:20 UTC; kenongsu
+Author: Kenong Su [aut, cre],
+  Hao Wu [aut]
+Maintainer: Kenong Su <kenong.su@emory.edu>
